@@ -9,11 +9,7 @@ const findCommonLetters = input => {
     for (let i = 1; i < sorted.length; i++) {
         let numUncommon = 0;
         let boxId = sorted[i];
-        let prevBoxId = sorted[i-1];
-
-        console.log(prevBoxId);
-        console.log(boxId + '\n');
-        
+        let prevBoxId = sorted[i-1];  
         
         for (let j = 0; j < boxId.length; j++){
             if (numUncommon > 1) {
@@ -23,13 +19,11 @@ const findCommonLetters = input => {
             };
 
             if (boxId[j] === prevBoxId[j]) {
-                console.log(`common letters: ${boxId[j]} = ${prevBoxId[j]}`);
                 commonLetters.push(boxId[j]);
             } else {
                 numUncommon++;
             }
         }
-        console.log();
         if (numUncommon === 1) break;
     }
 
